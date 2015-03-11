@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+
+    <head>
+        <title>Squats Archive</title>
+
+        <meta charset="utf-8">
+
+        <script src="../static/js/lib/jquery.min.js"></script>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+        <script src="../static/js/lib/underscore-min.js"></script>
+        <script src="../static/js/lib/handlebars.js"></script>
+        <script src="../static/js/lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../static/js/lib/smartresize.js"></script>
+
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+        <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+        <script src="../static/js/home.js"></script>
+
+        <link rel="stylesheet" href="../static/js/lib/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../static/css/style.css" />
+        <link rel="stylesheet" href="../static/css/home.css" />
+
+
+        <!-- Piwik -->
+        <script type="text/javascript">
+          var _paq = _paq || [];
+          _paq.push(['trackPageView']);
+          _paq.push(['enableLinkTracking']);
+          (function() {
+            var u="//vps86737.ovh.net/piwik/";
+            _paq.push(['setTrackerUrl', u+'piwik.php']);
+            _paq.push(['setSiteId', 1]);
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+          })();
+        </script>
+        <noscript><p><img src="//vps86737.ovh.net/piwik/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+        <!-- End Piwik Code -->
+
+        
+    </head>
+
+    <body>
+        <div id="map"></div>
+        <div id="header">
+            <div>
+                <h1 id="title">Squats Archive</h1>
+                <span id="langage">
+                    <a href="../fr">fr</a>
+                    <a href="../en">en</a>
+                </span>
+            </div>
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#europe" data-toggle="tab">Europe</a></li>
+                <li><a href="#why" data-toggle="tab">Pourquoi archiver ?</a></li>
+                <li><a href="#faq" data-toggle="tab">FAQ</a></li>
+                <li><a href="#who" data-toggle="tab">Qui sommes nous ?</a></li>
+                <li><a href="#add-a-city" data-toggle="tab">Ajouter une ville</a></li>
+                <li><a href="#manage-a-city" data-toggle="tab">Gerer les archives d'une ville</a></li>
+            </ul>
+        </div id="header">
+        <main class="tab-content">
+                    <div class="tab-pane active uncover" id="europe">
+                    </div>
+
+                    <div class="tab-pane cover" id="why">
+                        <p>
+                            Une archive a différentes dimensions utiles. Elle permet une convergence de données sur un sujet particulier, à un moment donné. Les bouts d'informations, d'ici et d'ailleurs, qui se rassemblent dans l'archive, forment une perspective sur le passé, et permettent de raconter une histoire...
+                        </p>
+
+                        <p>
+                            D'un côté, une archive centralise et préserve les données afin que celles-ci soient accessibles à toutes et à tous, du simple passant curieux, au chercheur... D'un autre côté, une archive contient des données qui fournissent une vision globale sur le sujet, dans ce cas-ci, le squat, son existence géographique, ainsi que sa portée sociale, culturelle, et/ou politique.
+                        </p>
+
+                        <p>
+                            Squats Archive propose une plateforme d'archives de squats expulsés, par ville.
+                        </p>
+
+                        <p>
+                            L'objectif principal du projet est de fournir les données nécessaires à la dénonciation de toutes ces expulsions de lieux occupés, sous prétexte d’un projet urgent à réaliser, et dont les supposés projets ne voient jamais le jour.
+                        </p>
+
+                        <p>
+                            Ces bâtiments expulsés sont souvent « dévitalisés » (c’est à dire privés de l’eau et de l’électricité), rendus insquattables ils restent vides, et leurs habitants repartent en quêtent de nouveaux lieux, auxquels ils donneront une nouvelle vie, une nouvelle dynamique, mais ce (que) temporairement.
+                        </p>
+
+                        <p>
+                            Squats Archive vise à rendre hommage à ces lieux, et aux initiatives qu’ils ont porté... 
+                        </p>
+
+                        <p>
+                            Ce projet doit tout à son parent : <a href="http://http://londonsquatsarchive.org/">London Squats Archive</a>.
+                        </p>
+                    </div>      
+                    
+                    <div class="tab-pane cover" id="faq">
+                        <ol>
+                            <li>
+                                <h3>Qu’est-ce que Squats Archive ?</h3>
+                                <p>
+                                    Voir la présentation.
+                                </p>
+                            </li>                   
+                            <li>
+                                <h3> A quoi sert Squats Archive ?</h3>
+                                <p>
+                                    Voir la présentation.
+                                </p>
+                            </li>
+                            <li>
+                                <h3> Pourquoi ne pas lister les squats « actifs » ?</h3>
+                                <p>
+                                    Les squats sont des lieux de vie, et nous ne souhaitons pas exposés ces lieux.
+                                    Notre démarche vise a constitué une archive rendant compte du passé, et non pas du présent.
+                                </p>
+                            </li>
+                            <li>
+                                <h3> Qui gère la mise en ligne des squats ?</h3>
+                                <p>
+                                    Un collectif local à chaque ville gère cela selon sa propre politique et est responsable de ce qu’il inclus.
+                                </p>
+                            </li>
+                            <li>
+                                <h3> Comment est-ce que je peux rajouter un squat ?</h3>
+                                <p>
+                                    Envoie les informations au collectif de ta ville dont l’adresse mail figure sur la carte de la ville.
+                                </p>
+                            </li>
+                            <li>
+                                <h3> Pourquoi est-ce que c’est un collectif qui gère la mise en ligne des squats ?</h3>
+                                <p>
+                                    Il est important que les squats, squatters/ses soient protégés. Le collectif porte la responsabilité de ce qu’il publie (c.f. 3.
+                                </p>
+                            </li>
+                            <li>
+                                <h3>Comment avez-vous choisi les catégories ?</h3>
+                                <p>
+                                    Compte tenu de l’objectif de Squats Archive, nous avons tenu à mettre en avant les éléments concernant les procédures, ainsi que les activités des lieux . Par contre, le nombre de champs est volontairement limité dans une volonté de protéger les lieux et leurs habitants.
+                                </p>
+                            </li>
+                            <li>
+                                <h3>Comment ouvrir un squat ?</h3>
+                                <p>
+                                    Voir le <a href="https://infokiosques.net/spip.php?article41">Squat de A à Z</a>.
+                                </p>
+                            </li>
+
+                    </div>
+                    
+                    <div class="tab-pane cover" id="who">
+                        <div style="height:100%">
+                            <h1>« Rien à déclarer. »*</h1>
+                        </div>
+                        <p>
+                            *Un collectif de squatters militants ayant fait l’expérience, et ayant été témoins, de nombreuses expulsions (tant “légales” que “illégales”) pour motifs “urgents”. Parmi ces motifs figurent « l’urgence » pour le « début de travaux » qui ne sont jamais entamés, ou pour « des projets » qui ne verront jamais le jour mais qui permettent le monopole des institutions publiques, entre autres, sur des lieux vides, pendant qu’aucune solution concrète officielle n’est apportée aux victimes de problèmes de logement. Au-delà du squat dit « d’habitation » des membres de notre collectif ont respectivement été à l’origine, ou ont fait partie, d’initiatives sociales, culturelles et/ou politiques, au sein de leurs lieux. 
+                        </p>
+                    </div>
+
+                    <div class="tab-pane cover" id="add-a-city">
+                        <h3>Rassembler un collectif pour votre ville</h3>
+                            <p>
+                                Un travail d'archive se fait sur la durée, pensez-y dès le début, et rassemblez un petit groupe bien motivé !
+                            </p>
+                        <h3>Créer une adresse mail</h3>
+                            <p>
+                                C’est par elle que des gens pourront vous envoyer des infos sur des squats à ajouter. C’est aussi par elle que l’on passera, nous Squats Archive, pour échanger avec vous. Nous vous conseillons d’aller en demander une à riseup.net, et de la créer sur le format : *votreville*squatsarchive@riseup.net (exemple : lyonsquatsarchive@riseup.net)
+                            </p>
+                        <h3>Créez un compte cartodb</h3>
+                            <p>
+                                Nous ne stockons pas les informations sur les squats des différentes villes. Nous utilisons pour cela <a href="http://cartodb.com/">CartoDB</a>, et c’est ce que vous pouvez faire aussi. Créez un compte gratuit (*votreville*squatsarchive) avec votre nouvelle adresse mail, puis allez dans « créer une nouvelle table » que vous appellerez « evicted_squats_*votreville* », et importez [… ?] pour avoir votre base de données bien formattée.
+                            </p>
+                        <h3>Envoyez-nous un mail avec vos infos et nous vous ajouterons :</h3>
+                            <p>
+                                Pour ajouter votre ville, et lier la page à votre base de données, on a besoin de vos informations suivantes :
+
+                                Adresse mail ; ville ; nom d’utilisateur CartoDB ; nom de la table.
+
+                                Envoyez-nous tout ça à <a href="mailto:squatsarchive@riseup.net">squatsarchive@riseup.net</a>.
+                            </p>
+
+                        <h3>Gérez vos données en toute autonomie sur CartoDB :</h3>
+                            <p>
+                                Voilà, nous n’avez plus besoin de nous !
+
+                                Pour ajouter des squats dans votre ville ça se passe depuis votre compte CartoDB en utilisant leur interface. Nous, on s’occupe juste d’aller chercher vos données et de les afficher proprement !
+                            </p>
+
+                        <h3>ATTENTION !</h3>
+                            <p>
+                                Si vous rajoutez des colonnes (de catégories) dans CartoDB, ce que vous y mettrez ne s’affichera pas. Nous vous conseillons de ne mas y mettre d’information sensible pour autant, car ces informations pourront être accessibles publiquement via les données brutes !
+
+                                Comme d’habitude : autogestion ! Et soyez prudents !
+                            </p>
+                    </div>
+
+                    <div class="tab-pane cover" id="manage-a-city">
+                        <h3>Chaque collectif décidera de son propre fonctionnement afin de garantir la fiabilité de ses infos et de ne pas exposer son réseau, mais nous proposons cette ligne de conduite :
+                        </h3>
+
+                        <p> 1. Aucune donnée personnelle, ou pouvant permettre d’identifier quelqu’un, ne sera publiée.</p>
+
+                        <p> 2. L’inclusion des squats expulsés se fera avec l’accord, et sur la base de la contribution par mail (EMAIL) des anciens habitants de ces lieux.</p>
+
+                        <p> 3. Avant la publication des données nous vérifierons que c’est le collectif du lieu en question qui les fourni, et non pas une seule personne.</p>
+
+                        <p> 4. Malgré ce principe de précaution, en cas de réclamation directe par mail, ou de visu, la suspension des données concernant le lieu en question sera immédiate.</p>
+
+                        <p> 5. Il sera préférable d’attendre une période de prescription suivant la date d’expulsion du lieu (par exemple : 6 mois par défaut) avant d’en publier les données.</p>
+
+                        <p> 6. Les squats affichés sur la carte pourront être définis par les anciens habitants suivant ces critères proposés : </p>
+                        <ul>
+                            <li>Nom du squat</li>
+                            <li>Adresse</li>
+                            <li>Présentation</li>
+                            <li>Activités éventuelles (sociales, culturelles, politiques)</li>
+                            <li>Page web du/des collectif(s)</li>
+                            <li>Type de bâtiment</li>
+                            <li>Date d’ouverture</li>
+                            <li>Date de l’expulsion</li>
+                            <li>Durée d’occupation</li>
+                            <li>Motifs d’expulsion</li>
+                            <li>Verdict/rendu du procès</li>
+                            <li>Expulsable le</li>
+                            <li>Propriétaire (si publique inclusion du nom, si privé anonymat)</li>
+                            <li>Usage du lieu depuis l’expulsion</li>
+                        </ul>
+                    </div>
+        </main>
+
+    </body>
+
+</html>
